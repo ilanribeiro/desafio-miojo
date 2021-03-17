@@ -1,21 +1,21 @@
 const tempoMinimoDePreparo = (tempoMiojo, ampulhetas) => {
   //  implemente a lógica aqui. 
 	ampulhetas.sort((a,b) => a - b);
-	console.log(ampulhetas);
-	const difAmpulhetas = ampulhetas[1]-ampulhetas[0];
-	console.log(difAmpulhetas)
+	const ampulhetaMaior = ampulhetas[1];
+	const ampulhetaMenor = ampulhetas[0];
+	const difAmpulhetas = ampulhetaMaior-ampulhetaMenor;
+	
 	if (difAmpulhetas === 0) {
 		return false
 	}
 
 	if (difAmpulhetas === tempoMiojo) {
-		return ampulhetas[1];
+		return ampulhetaMaior;
 	}
 
 	if (difAmpulhetas < tempoMiojo) {
 		const tempoRestante = tempoMiojo - difAmpulhetas
-		console.log(tempoRestante)
-		const doubleMin = ampulhetas[0] * 2;
+		const doubleMin = ampulhetaMenor * 2;
 		return doubleMin;
 	}
 
